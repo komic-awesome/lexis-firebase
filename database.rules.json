@@ -5,6 +5,28 @@
       "$word": {
         ".validate": "newData.isString()"
       }
+    },
+    "games": {
+      ".read": true,
+      "$gameId": {
+        ".read": true,
+        "name": { ".validate": "newData.isString()" },
+        "intro": { ".validate": "newData.isString()" }
+      }
+    },
+    "words": {
+      "$gameId": {
+        ".read": true,
+        "$word": {
+          "$sentId": { ".validate": false }
+        }
+      }
+    },
+    "sents": {
+      "$gameId": {
+        ".read": true,
+        "$sentId": {  ".validate": false }
+      }
     }
   }
 }
